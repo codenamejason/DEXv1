@@ -1,13 +1,39 @@
 {
     "name": "@dex/monorepo",
     "version": "1.0.0",
+    "private": true,
     "description": "Main monorepo for the dex project",
     "scripts": {
       "dev": "yarn workspace @dex/front-end dev",
       "build": "yarn workspace @dex/front-end build",
       "start": "yarn workspace @dex/front-end start",
-      "lint": "yarn workspace @dex/front-end lint"
+      "lint": "yarn workspace @dex/front-end lint",
+      "test": "yarn workspace @dex/front-end test",
+      "test:contracts": "yarn workspace @dex/hardhat test",
+      "compile": "yarn workspace @dex/hardhat compile",
+      "chain": "yarn workspace @dex/hardhat chain",
+      "fork": "yarn workspace @dex/hardhat fork",
+      "deploy": "yarn workspace @dex/hardhat deploy",
+      "postdeploy": "yarn workspace @dex/hardhat postdeploy",
+      "watch": "yarn workspace @dex/hardhat watch",
+      "accounts": "yarn workspace @dex/hardhat accounts",
+      "balance": "yarn workspace @dex/hardhat balance",
+      "send": "yarn workspace @dex/hardhat send",
+      "generate": "yarn workspace @dex/hardhat generate",
+      "account": "yarn workspace @dex/hardhat account",
+      "verify": "yarn workspace @dex/hardhat verify"
     },
     "author": "jaxcoder",
-    "license": "ISC"
+    "license": "ISC",
+    "workspaces": {
+      "packages": [
+        "packages/*"
+      ],
+      "nohoist": [
+        "**/hardhat",
+        "**/hardhat/**",
+        "**/hardhat-ts",
+        "**/hardhat-ts/**"
+      ]
+    }
   }
